@@ -22,7 +22,7 @@ I screened candidate pairs from banking and oil marketing on the training data o
 
 1. **Cointegration test (Engle-Granger):** does the gap between the two stocks reliably pull back to its average? A low p-value suggests it does.
 2. **Hedge ratio (beta):** should be clearly positive, meaning the stocks actually move together.
-3. **Each stock on its own should *not* be mean-reverting** (Augmented Dickey-Fuller test). Otherwise the pair test can be fooled.
+3. **Each stock on its own should *not* be mean-reverting** . Otherwise the pair test can be fooled.
 
 | Pair | Cointegration p | Beta | Stock A alone p | Stock B alone p |
 | --- | --- | --- | --- | --- |
@@ -103,16 +103,8 @@ The training period gave similar numbers (Sharpe 0.14 before costs, 0.04 after),
 
 - **One pair, a short test period, and few trades,** so the results depend heavily on a handful of outcomes.
 - **Relationships can break.** The early-2026 shift shows that a pair that passed in training can stop behaving the same way.
-- **Shorting in India:** cash equities can't be shorted overnight, so a real version would need stock futures, with lot sizes, rollover costs and margin.
 - **Costs are simplified.** 0.1% per leg doesn't include slippage or the price impact of large orders.
-- **Constant-exposure approximation:** the backtest assumes constant rupee amounts in each leg, rebalanced daily.
 - **The relationship isn't perfectly linear.** The regression chart shows a slight curve that a straight line can't capture.
-
-## Possible improvements
-
-- Update the hedge ratio over time (a rolling or walk-forward beta) so the strategy can adapt to relationship shifts.
-- Tune thresholds on the training data only, then confirm on the test period.
-- Trade a portfolio of several pairs to reduce dependence on any one relationship.
 
 ## How to run
 
