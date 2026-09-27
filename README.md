@@ -91,8 +91,6 @@ The last rule came from reading the trade log. Without it, the strategy re-enter
 | Beta fitted on all data (lookahead) | +1.59% | 0.17 | -9.87% |
 | No one-day delay (impossible timing) | -8.79% | -0.78 | -11.86% |
 
-The training period gave similar numbers (Sharpe 0.14 before costs, 0.04 after), which suggests the strategy wasn't overfitted. None of the thresholds were tuned.
-
 ### What the results mean
 
 - **The strategy worked until the relationship changed.** It gained about 9% through 2025, then lost about 10% in a few weeks in early 2026 when the spread jumped to a new level and both stop-losses fired. Many small wins followed by one large loss is typical of mean-reversion strategies.
